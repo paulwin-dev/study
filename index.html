@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Study Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -1088,6 +1089,10 @@ scheduleNotifications();
 if (state.timer.running && !state.timer.paused) {
   startTimerTick();
 }
+</script>
+<script>
+  if ('serviceWorker' in navigator)
+    navigator.serviceWorker.register('./sw.js');
 </script>
 </body>
 </html>
